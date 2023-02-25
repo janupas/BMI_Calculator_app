@@ -30,6 +30,8 @@ class FirstScreen extends StatefulWidget {
 
 class _FirstScreenState extends State<FirstScreen> {
   double height = 0.0;
+  int weight = 50;
+  int age = 20;
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +63,7 @@ class _FirstScreenState extends State<FirstScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     const Text(
-                      'HEIGHT',
+                      'HIEGHT',
                       style: TextStyle(
                         color: Colors.grey,
                         fontSize: 18,
@@ -98,6 +100,177 @@ class _FirstScreenState extends State<FirstScreen> {
                       inactiveColor: Colors.white,
                       activeColor: const Color(0xffe83d66),
                       thumbColor: const Color(0xffe83d66),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: Container(
+                margin: const EdgeInsets.only(top: 20),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Container(
+                        decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(6),
+                          ),
+                          color: Color(0xff323244),
+                        ),
+                        height: 250,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Text(
+                              'WEIGHT',
+                              style: TextStyle(
+                                fontSize: 24,
+                                color: Colors.grey,
+                              ),
+                            ),
+                            Text(
+                              '$weight',
+                              style: const TextStyle(
+                                fontSize: 40,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Container(
+                              margin: const EdgeInsets.only(top: 10),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Container(
+                                    margin: const EdgeInsets.all(5),
+                                    decoration: const BoxDecoration(
+                                      borderRadius: BorderRadius.all(
+                                        Radius.circular(50),
+                                      ),
+                                      color: Color(0xff5d5f6e),
+                                    ),
+                                    child: IconButton(
+                                      onPressed: () {
+                                        setState(() {
+                                          weight -= 1;
+                                        });
+                                      },
+                                      icon: const Icon(
+                                        Icons.remove,
+                                      ),
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  Container(
+                                    margin: const EdgeInsets.all(5),
+                                    decoration: const BoxDecoration(
+                                      borderRadius: BorderRadius.all(
+                                        Radius.circular(50),
+                                      ),
+                                      color: Color(0xff5d5f6e),
+                                    ),
+                                    child: IconButton(
+                                      onPressed: () {
+                                        setState(() {
+                                          weight += 1;
+                                        });
+                                      },
+                                      icon: const Icon(
+                                        Icons.add,
+                                      ),
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 30,
+                    ),
+                    Expanded(
+                      child: Container(
+                        decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(6),
+                          ),
+                          color: Color(0xff323244),
+                        ),
+                        height: 250,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Text(
+                              'AGE',
+                              style: TextStyle(
+                                fontSize: 24,
+                                color: Colors.grey,
+                              ),
+                            ),
+                            Text(
+                              '$age',
+                              style: const TextStyle(
+                                fontSize: 40,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Container(
+                              margin: const EdgeInsets.only(top: 10),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Container(
+                                    margin: const EdgeInsets.all(5),
+                                    decoration: const BoxDecoration(
+                                      borderRadius: BorderRadius.all(
+                                        Radius.circular(50),
+                                      ),
+                                      color: Color(0xff5d5f6e),
+                                    ),
+                                    child: IconButton(
+                                      onPressed: () {
+                                        setState(() {
+                                          age -= 1;
+                                        });
+                                      },
+                                      icon: const Icon(
+                                        Icons.remove,
+                                      ),
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  Container(
+                                    margin: const EdgeInsets.all(5),
+                                    decoration: const BoxDecoration(
+                                      borderRadius: BorderRadius.all(
+                                        Radius.circular(50),
+                                      ),
+                                      color: Color(0xff5d5f6e),
+                                    ),
+                                    child: IconButton(
+                                      onPressed: () {
+                                        setState(() {
+                                          age += 1;
+                                        });
+                                      },
+                                      icon: const Icon(
+                                        Icons.add,
+                                      ),
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                   ],
                 ),
