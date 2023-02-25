@@ -28,7 +28,11 @@ class FirstScreen extends StatefulWidget {
   State<FirstScreen> createState() => _FirstScreenState();
 }
 
+// Gender enum
+enum Gender { male, female }
+
 class _FirstScreenState extends State<FirstScreen> {
+  Gender gender = Gender.male;
   double height = 0.0;
   int weight = 50;
   int age = 20;
@@ -38,7 +42,10 @@ class _FirstScreenState extends State<FirstScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Center(
-          child: Text('BMI CALCULATOR'),
+          child: Text(
+            'BMI CALCULATOR',
+            style: TextStyle(fontSize: 22),
+          ),
         ),
         backgroundColor: const Color(0xff1d2136),
       ),
@@ -46,6 +53,89 @@ class _FirstScreenState extends State<FirstScreen> {
         color: const Color(0xff1d2136),
         child: Column(
           children: [
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: Container(
+                margin: const EdgeInsets.only(top: 20),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            gender = Gender.male;
+                          });
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: const BorderRadius.all(
+                              Radius.circular(6),
+                            ),
+                            color: gender == Gender.male
+                                ? const Color(0xff323244)
+                                : const Color(0xff24263b),
+                          ),
+                          height: 200,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: const [
+                              Icon(
+                                Icons.male,
+                                color: Colors.white,
+                                size: 80,
+                              ),
+                              Text(
+                                'MALE',
+                                style:
+                                    TextStyle(color: Colors.grey, fontSize: 18),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 30,
+                    ),
+                    Expanded(
+                      child: GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            gender = Gender.female;
+                          });
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: const BorderRadius.all(
+                              Radius.circular(6),
+                            ),
+                            color: gender == Gender.female
+                                ? const Color(0xff323244)
+                                : const Color(0xff24263b),
+                          ),
+                          height: 200,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: const [
+                              Icon(
+                                Icons.male,
+                                color: Colors.white,
+                                size: 80,
+                              ),
+                              Text(
+                                'FEMALE',
+                                style:
+                                    TextStyle(color: Colors.grey, fontSize: 18),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
             Padding(
               padding: const EdgeInsets.all(10),
               child: Container(
