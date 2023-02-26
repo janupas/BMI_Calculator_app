@@ -12,7 +12,7 @@ class Main extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
-        '/': (context) => const FirstScreen(),
+        FirstScreen.routeName: (context) => const FirstScreen(),
         SecondScreen.routeName: (context) => const SecondScreen(),
       },
       theme: ThemeData(fontFamily: 'Manrope'),
@@ -24,6 +24,8 @@ class Main extends StatelessWidget {
 // First screen
 class FirstScreen extends StatefulWidget {
   const FirstScreen({super.key});
+
+  static const routeName = '/';
 
   @override
   State<FirstScreen> createState() => _FirstScreenState();
