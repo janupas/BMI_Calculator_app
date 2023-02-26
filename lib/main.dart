@@ -434,9 +434,9 @@ class SecondScreen extends StatelessWidget {
     String status = '';
     String description = '';
 
-    if (double.parse(args.bmi) >= 18.5 && double.parse(args.bmi) <= 24.9) {
-      status = 'NORMAL';
-      description = 'Your BMI is normal, Enjoy.';
+    if (double.parse(args.bmi) > 25) {
+      status = 'OVER WEIGHT';
+      description = "Your BMI indicates that you may be overweight.";
     }
 
     if (double.parse(args.bmi) < 18.5) {
@@ -444,9 +444,9 @@ class SecondScreen extends StatelessWidget {
       description = "Your BMI indicates that you may be underweight.";
     }
 
-    if (double.parse(args.bmi) > 25) {
-      status = 'OVER WEIGHT';
-      description = "Your BMI indicates that you may be overweight.";
+    if (double.parse(args.bmi) >= 18.5 && double.parse(args.bmi) <= 24.9) {
+      status = 'NORMAL';
+      description = 'Your BMI is normal, Enjoy.';
     }
 
     return Scaffold(
